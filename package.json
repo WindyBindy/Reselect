@@ -2,6 +2,7 @@
   "name": "reselect",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://windybindy.github.io/Reselect",
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.6",
@@ -21,6 +22,7 @@
     "react-toastify": "^6.2.0",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
+    "reselect": "^4.1.8",
     "shortid": "^2.2.16",
     "slugify": "^1.4.6",
     "web-vitals": "^0.2.4",
@@ -31,7 +33,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --delay 300 --port 4040 --watch db.json "
+    "server": "json-server --delay 300 --port 4040 --watch db.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +58,7 @@
   "devDependencies": {
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
+    "gh-pages": "^6.3.0",
     "husky": "^4.3.0",
     "json-server": "^0.16.3",
     "lint-staged": "^10.5.2",
