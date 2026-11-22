@@ -3,8 +3,11 @@ import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:4040';
 
 async function fetchStaticDatabase() {
-  const { data } = await axios.get(`${process.env.PUBLIC_URL}/db.json`);
-  return data;
+  const response = await fetch(`${process.env.PUBLIC_URL || ''}/db.json`);
+  if (!response.ok) {
+    throw new Error(`Failed to load db.json: ${response.status}`);
+  }
+  return response.json();
 }
 
 export async function fetchAuthors() {
